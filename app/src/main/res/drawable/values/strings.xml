@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GallerySample</string>
+    <string name="cancel">Cancel</string>
+    <string name="all_photos">All Photos</string>
+    <string name="folder">Folders</string>
+
+</resources>
