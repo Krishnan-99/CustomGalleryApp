@@ -27,8 +27,8 @@
             android:background="?selectableItemBackground"
             android:checked="false"
             android:textColor="@android:color/white"
-            android:textOff="@string/folder"
-            android:textOn="@string/all_photos"
+            android:textOff="@string/Album"
+            android:textOn="@string/library"
             android:textSize="16sp" />
         <ImageView
             android:id="@+id/arrow"

@@ -69,9 +69,9 @@ class GalleryViewActivity : BaseActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .doOnNext {
                 val albumName = if (it.name == ALL_MEDIA_ALBUM_NAME) textAlbumName.context.getString(
-                    R.string.all_photos) else it.name
+                    R.string.library) else it.name
                 textAlbumName.textOff = albumName
-                textAlbumName.textOn = albumName
+                textAlbumName.textOn = textAlbumName.context.getString(R.string.Album)
                 textAlbumName.isChecked = false
             }.subscribe()
             .apply { addDisposable(this) }
