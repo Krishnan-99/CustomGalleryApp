@@ -5,6 +5,8 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.fragment.app.Fragment
 import com.galleryapp.Utilits.R
 import com.galleryapp.Utilits.model.*
@@ -60,7 +62,12 @@ class GalleryViewActivity : BaseActivity() {
             transaction.commit()
             supportFragmentManager.executePendingTransactions()
         }
-        arrow.setOnClickListener { textAlbumName.toggle() }
+        arrow.setOnClickListener {
+            textAlbumName.toggle()
+        }
+        buttonCancel.setOnClickListener(){
+            textAlbumName.toggle()
+        }
 
     }
 
@@ -69,9 +76,9 @@ class GalleryViewActivity : BaseActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .doOnNext {
                 val albumName = if (it.name == ALL_MEDIA_ALBUM_NAME) textAlbumName.context.getString(
-                    R.string.library) else it.name
+                    R.string.all_photos) else it.name
                 textAlbumName.textOff = albumName
-                textAlbumName.textOn = textAlbumName.context.getString(R.string.Album)
+                textAlbumName.textOn = textAlbumName.context.getString(R.string.folder)
                 textAlbumName.isChecked = false
             }.subscribe()
             .apply { addDisposable(this) }

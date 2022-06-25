@@ -44,7 +44,7 @@ class AlbumViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
             .load(album.coverImagePath)
             .into(view.imageView)
         view.textAlbumName.text =
-            if (album.name == ALL_MEDIA_ALBUM_NAME) view.context.getString(R.string.library) else album.name
+            if (album.name == ALL_MEDIA_ALBUM_NAME) view.context.getString(R.string.all_photos) else album.name
         view.textMediaCount.text = album.mediaList.size.toString()
     }
 }
